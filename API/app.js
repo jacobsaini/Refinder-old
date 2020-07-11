@@ -1,25 +1,34 @@
 const express = require("express"),
+      bodyParser = require('body-parser'),
       cors = require("cors"),
       app = express()
-
+    
 
 const corsOptions = {
     origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 const RecipeApi = require('./recipeapi')
-const asyncApiCall = async () => {
-    const response = await RecipeApi.getRecipes('apples', 5)
-    var recipes  = response['recipes'];
-    for(var i = 0; i < response.length; i++){
-        console.log(recipes['title'])
-        console.log(recipes['usedIngredientCount'])
+
+
+app.get("/", function(req,res){
+    var ingredient = req.body.ingredients;
+    const query = {ingredients: ingredient, number: '5'}
+    const asyncApiCall = async () => {
+        const response = await RecipeApi.getRecipes(query)
+        var recipes  = response['data'];
+            recipes.forEach(function(recipe) {
+                console.log(recipe.title)
+            });
     }
-}
-asyncApiCall()
+    asyncApiCall()
+})
+
 
 
 app.listen(8887, function(){
-    console.log('Server has started on port 3000')
+    console.log('Server has started on port 8887')
 })

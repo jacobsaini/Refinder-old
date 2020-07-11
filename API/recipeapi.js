@@ -2,7 +2,7 @@ const axios = require("axios");
 require('dotenv').config();
 const BASE_URL = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com`
 module.exports = {
-    getRecipes: (ingredients, num) => axios({
+    getRecipes: (query) => axios({
         method:"GET",
         url : BASE_URL + `/recipes/findByIngredients`,
         headers: {
@@ -11,8 +11,8 @@ module.exports = {
             "x-rapidapi-key": process.env.RAPIDAPI_KEY
         },
         params: {
-            ingredients: ingredients,
-            number: num
+            "ingredients": query.ingredients,
+            "number": query.number
         }
     })
 }
