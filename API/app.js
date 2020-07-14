@@ -5,7 +5,7 @@ const express = require("express"),
     
 
 const corsOptions = {
-    origin: 'http://localhost:4200/',
+    origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
@@ -20,6 +20,7 @@ app.get("/", function(req,res){
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)
         var recipes  = response['data'];
+        res.send(recipes)
             recipes.forEach(function(recipe) {
                 console.log(recipe.title)
             });

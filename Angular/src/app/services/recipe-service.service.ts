@@ -10,7 +10,8 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  getByIngredients (ingredients){
+  getByIngredient (ingredients){
     return this.http.get(`${baseUrl}?ingredients=${ingredients}`)
+   
   }
 }

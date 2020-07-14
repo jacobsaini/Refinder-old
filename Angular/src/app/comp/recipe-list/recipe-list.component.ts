@@ -9,20 +9,21 @@ import { RecipeService} from '../../services/recipe-service.service'
 export class RecipeListComponent implements OnInit {
 
   ingredients: '';
-  recipes = null;
+  recipes:any;
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
   getByIngredients () {
-    this.recipeService.getByIngredients(this.ingredients)
-    .subscribe(data =>{
-      this.recipes = data;
-      
-    })
-    
-  }
+    this.recipeService.getByIngredient(this.ingredients)
+    .subscribe(recipes => {
+      this.recipes = recipes;
+      console.log(recipes)
+    }),
+    error => {
+      console.log(error)
+    }};
 
 
 }
