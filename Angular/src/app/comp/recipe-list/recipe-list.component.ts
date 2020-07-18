@@ -7,8 +7,8 @@ import { RecipeService} from '../../services/recipe-service.service'
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
   ingredients: '';
+  number: '';
   recipes:any;
   constructor(private recipeService: RecipeService) { }
 
@@ -16,7 +16,8 @@ export class RecipeListComponent implements OnInit {
   }
 
   getByIngredients () {
-    this.recipeService.getByIngredient(this.ingredients)
+    console.log(this.ingredients,this.number)
+    this.recipeService.getByIngredient(this.ingredients,this.number)
     .subscribe(recipes => {
       this.recipes = recipes;
       console.log(recipes)

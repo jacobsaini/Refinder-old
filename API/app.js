@@ -16,7 +16,9 @@ const RecipeApi = require('./recipeapi')
 
 app.get("/", function(req,res){
     var ingredient = req.query.ingredients;
-    const query = {ingredients: ingredient, number: '5'}
+    var number  = req.query.number;
+    console.log(number,ingredient)
+    const query = {ingredients: ingredient, number: number}
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)
         var recipes  = response['data'];

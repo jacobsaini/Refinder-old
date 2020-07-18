@@ -1,0 +1,20 @@
+.jumbotron{
+    /* background-color: white; */
+}
+
+#num {
+    width:4.5em;
+}
+
+.input > input {
+    width:50em;
+    height:3em;
+}
+button {
+    margin-top:2em;
+}
+
+.card {
+    width:20em;
+    margin-bottom:1em;
+}
