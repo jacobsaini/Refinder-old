@@ -1,48 +1,50 @@
 <div class="jumbotron input">
+  <div class="row">
+    <div class="col">
+      
+      <input type="text" class="form-control" id="ingredients" placeholder="Enter some ingredients"
+        [(ngModel)]="ingredients">
+    </div>
+    
+    <div class="col">
+      <select class="form-control" id="num" [(ngModel)]="number">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+      </select>
+    </div>
+  </div>
+ 
+  <button (click)="getByIngredients()" type="button" class="btn btn-success">Submit</button>
+
+</div>
+  <div class="loader" *ngIf="loading"></div>
+  <div class="container" >
     <div class="row">
-      <div class="col">
-        <input type="text" class="form-control" id="ingredients" placeholder="Enter some ingredients" [(ngModel)]= "ingredients">
-      </div>
-      <div class="col">
-        <select class="form-control" id="num" [(ngModel)]= "number">
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
+      <div class="col" *ngFor="let recipe of recipes">
+
+        <div class="card">
+          <img class="card-img-top" src="{{recipe.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{recipe.title | slice:0:26}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
       </div>
     </div>
-    <button (click)="getByIngredients()" type="button" class="btn btn-success">Submit</button>
-
-</div>
-
- <div class="container">
-   <div class="row">
-     <div class="col" *ngFor="let recipe of recipes">
-   
-  <div class="card" >
-  <img class="card-img-top" src="{{recipe.image}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{recipe.title | slice:0:26}}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
-</div>
-</div>
-</div>
-
-
-  <!-- <p><img src="{{recipe.image}}"> -- {{recipe.title}}</p> -->

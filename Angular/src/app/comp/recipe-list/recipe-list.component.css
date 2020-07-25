@@ -1,5 +1,5 @@
 .jumbotron{
-    /* background-color: white; */
+    background-color: white;
 }
 
 #num {
@@ -18,3 +18,20 @@ button {
     width:20em;
     margin-bottom:1em;
 }
+.loader {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 10px solid transparent;
+    border-top-color: #f56;
+    border-left-color: #f56;
+    border-radius: 50%;
+    animation: loader .75s 10 ease forwards;
+    margin-left:45%;
+  }
+  
+  @keyframes loader {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
