@@ -11,11 +11,19 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class RecipeListComponent implements OnInit {
   ingredients: String;
-  number: '';
-  recipes:any;
-  loading:boolean = false;
+  main:String; 
   loadingSub: Subscription;
-  input = document.getElementById('ingredients');
+  loading:boolean = false;
+  change = false;
+  ingreServ:boolean;
+  recipes:any;
+  number: '';
+  diet:'';
+  intol: any;
+  exclude: any;
+  
+
+  
 
   constructor(private recipeService: RecipeService, private loadingScreenServ: LoadingAnimService) { }
  
@@ -29,20 +37,41 @@ export class RecipeListComponent implements OnInit {
 
 
   getByIngredients () {
-    this.ingredients = this.ingredients.replace(/\s/g, '');
+    // this.ingredients = this.ingredients.replace(/\s/g, '');
     console.log(this.ingredients,this.number)
     this.recipeService.getByIngredient(this.ingredients,this.number)
     .subscribe(recipes => {
       this.ingredients = '';
       this.loading = true;
       this.recipes = recipes;
-      console.log(recipes)   
+      console.log(recipes)
+      this.ingreServ = true;  
     })
     error => {
       console.log(error)
     }};
 
+    getBySearch () {
+      console.log(this.main)
+      this.recipeService.getBySearch(this.main,this.number,this.diet,this.intol,this.exclude)
+      .subscribe(recipes => {
+       this.ingreServ = false;
+        this.main = '';
+        this.loading = true;
+        this.recipes = recipes;
+        console.log(recipes) 
+      })
+      error => {
+        console.log(error)
+      }};
+
     ngOnDestroy(){
       this.loadingSub.unsubscribe();
+    }
+
+    changeSearch(){ 
+     this.change = !this.change;
+     
+
     }
 }

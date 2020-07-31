@@ -1,9 +1,25 @@
 .jumbotron{
     background-color: white;
 }
+.recipeImg {
+    width:100%;
+    height:10em;
+    object-fit: cover;
+}
+.card {
+    height:95%;
+    margin-bottom: 2em;
+    width:20em;
+    
+}
 
 #num {
     width:4.5em;
+}
+
+#diet {
+    margin-top:1em;
+    width:10.5em;
 }
 
 .input > input {
@@ -14,10 +30,6 @@ button {
     margin-top:2em;
 }
 
-.card {
-    width:20em;
-    margin-bottom:1em;
-}
 .loader {
     width: 60px;
     height: 60px;
@@ -28,6 +40,7 @@ button {
     border-radius: 50%;
     animation: loader .75s 10 ease forwards;
     margin-left:45%;
+    margin-bottom: 10%;
   }
   
   @keyframes loader {

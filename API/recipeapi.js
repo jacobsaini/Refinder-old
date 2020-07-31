@@ -27,8 +27,8 @@ module.exports = {
             "query": query.main,
             "number": query.number,
             "diet": query.diet,
-            "intolerances": query.intol,
-            "excludeIngredients": query.exclude,
+            // "intolerances": query.intol,
+            // "excludeIngredients": query.exclude,
             "instructionsRequired": true
 
         }

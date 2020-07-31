@@ -14,4 +14,8 @@ export class RecipeService {
     return this.http.get(`${baseUrl}?ingredients=${ingredients}&number=${number}`)
    
   }
+  getBySearch(main,number,diet,intol,exclude){
+    console.log(main)
+    return this.http.get(`${baseUrl}search/?main=${main}&number=${number}&diet=${diet}&intol=${intol}&exclude=${exclude}`)
+  }
 }

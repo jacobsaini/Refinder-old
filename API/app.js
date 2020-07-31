@@ -24,23 +24,30 @@ app.get("/", function(req,res){
         var recipes  = response['data'];
         res.send(recipes)
             recipes.forEach(function(recipe) {
-                console.log(recipe.title)
+                console.log(recipe['title']  )
             });
     }
     asyncApiCall()
 });
 app.get("/search", function(req,res){
-    var main = req.query.main,
-        number = req.query.number,
-        diet = req.query.diet,
-        intolerances = req.query.intol,
-        excludeIngredients = req.query.exclude;
-    console.log(number,main,diet,intolerances,excludeIngredients)
-    const query = {number: number,main: main,diet: diet,intolerances: intolerances,excludeIngredients: excludeIngredients}
+    let main = req.query.main,
+        number = req.query.number;
+        diet = req.query.diet
+        // intol = req.query.intol,
+        // exclude = req.query.exclude;
+        
+    const query = {number: number,main: main, diet: diet}
+    console.log(query)
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)
+       
         var recipes  = response['data'];
-        res.send(recipes)
+       console.log(recipes['results'])
+        res.send(recipes['results'])
+        // recipes.forEach(function(recipe) {
+        //     console.log(recipe.title)
+        // });
+       
     }
     asyncApiCall()
 });
