@@ -12,13 +12,16 @@
     width:20em;
     
 }
+.labels {
+    margin-bottom:0;
+}
 
 #num {
     width:4.5em;
 }
 
 #diet {
-    margin-top:1em;
+   
     width:10.5em;
 }
 

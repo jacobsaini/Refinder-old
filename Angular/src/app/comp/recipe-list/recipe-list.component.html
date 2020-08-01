@@ -1,14 +1,25 @@
 <div class="jumbotron input">
   <div class="row">
     <div class="col">
-      
-      <input type="text" *ngIf="change" class="form-control" id="ingredients" placeholder="Enter some ingredients"
-        [(ngModel)]="ingredients">
-    
-    <input type="text" *ngIf="!change" class="form-control" id="main" placeholder="Enter the name of a recipe e,g, Burger, Pizza, Pie"
-        [(ngModel)]="main">
+      <input
+        type="text"
+        *ngIf="change"
+        class="form-control"
+        id="ingredients"
+        placeholder="Enter some ingredients"
+        [(ngModel)]="ingredients"
+      />
+
+      <input
+        type="text"
+        *ngIf="!change"
+        class="form-control"
+        id="main"
+        placeholder="Enter the name of a recipe e,g, Burger, Pizza, Pie"
+        [(ngModel)]="main"
+      />
     </div>
-    
+
     <div class="col" id="colNum">
       <select class="form-control" id="num" [(ngModel)]="number">
         <option>5</option>
@@ -30,40 +41,106 @@
       </select>
     </div>
   </div>
-    <div class="row" *ngIf="!change">
-      <div class="col">
-      <select class="form-control" id="diet" [(ngModel)]="diet">
-        <option></option>
-        <option>vegetarian</option>
-        <option>vegan</option>
-        
-      
+  <div class="row mt-4" *ngIf="!change">
+    <div class="col">
+      <label for="diet" class="labels">Diet</label>
+      <div class="row">
+        <div class="col">
+          <select
+            class="form-control custom-select"
+            id="diet"
+            [(ngModel)]="diet"
+          >
+            <option value="1"></option>
+            <option value="2">vegetarian</option>
+            <option value="3">vegan</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+    <label for="intol" class="labels">Intolerances</label>
+
+    <div class="row">
+    <div class="col">
+      <select class="form-control custom-select" id="intol" [(ngModel)]="intol">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
       </select>
     </div>
-  </div>
- 
- 
-  <button (click)="getByIngredients()" *ngIf="change" type="button" class="btn btn-success">Submit</button>
-  <button (click)="getBySearch()" *ngIf="!change" type="button" class="btn btn-success">Submit </button>
-  <button (click)="changeSearch()"  *ngIf="change" type="button" class="btn btn-primary btn-sm ml-3">Search by recipe</button>
-  <button (click)="changeSearch()"  *ngIf="!change" type="button" class="btn btn-primary btn-sm ml-3">Search by ingredients</button>
-</div>
-  <div class="loader" *ngIf="loading"></div>
-  <hr class="my-4">
-  <div class="container" >
-    <div class="row">
-      <div class="col" *ngFor="let recipe of recipes">
+    </div>
+    </div>
 
-        <div class="card">
-          <img class="card-img-top" *ngIf="ingreServ" src="{{recipe.image}}">
-          <img class="card-img-top recipeImg" *ngIf="!ingreServ"src="https://spoonacular.com/recipeImages/{{recipe.image}}" >
-          <div class="card-body">
-            <h5 class="card-title">{{recipe.title | slice:0:26}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+    <div class="col">
+      <label for="exclude" class="labels">Exclude ingredients</label>
+  
+      <div class="row">
+      <div class="col">
+        <select class="form-control custom-select" id="exclude" [(ngModel)]="exclude">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+        </select>
+      </div>
+      </div>
+      </div>
+  </div>
+
+  <button
+    (click)="getByIngredients()"
+    *ngIf="change"
+    type="button"
+    class="btn btn-success"
+  >
+    Submit
+  </button>
+  <button
+    (click)="getBySearch()"
+    *ngIf="!change"
+    type="button"
+    class="btn btn-success"
+  >
+    Submit
+  </button>
+  <button
+    (click)="changeSearch()"
+    *ngIf="change"
+    type="button"
+    class="btn btn-primary btn-sm ml-3"
+  >
+    Search by recipe
+  </button>
+  <button
+    (click)="changeSearch()"
+    *ngIf="!change"
+    type="button"
+    class="btn btn-primary btn-sm ml-3"
+  >
+    Search by ingredients
+  </button>
+</div>
+<div class="loader" *ngIf="loading"></div>
+<hr class="my-4" />
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let recipe of recipes">
+      <div class="card">
+        <img class="card-img-top" *ngIf="ingreServ" src="{{ recipe.image }}" />
+        <img
+          class="card-img-top recipeImg"
+          *ngIf="!ingreServ"
+          src="https://spoonacular.com/recipeImages/{{ recipe.image }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe.title | slice: 0:26 }}</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
   </div>
+</div>
