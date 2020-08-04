@@ -33,10 +33,10 @@ app.get("/search", function(req,res){
     let main = req.query.main,
         number = req.query.number;
         diet = req.query.diet
-        // intol = req.query.intol,
-        // exclude = req.query.exclude;
+        intol = req.query.intol,
+        exclude = req.query.exclude;
         
-    const query = {number: number,main: main, diet: diet}
+    const query = {number: number,main: main, diet: diet, intol: intol, exclude: exclude}
     console.log(query)
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)

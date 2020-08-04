@@ -51,40 +51,55 @@
             id="diet"
             [(ngModel)]="diet"
           >
-            <option value="1"></option>
-            <option value="2">vegetarian</option>
-            <option value="3">vegan</option>
+            <option></option>
+            <option>vegetarian</option>
+            <option>vegan</option>
           </select>
         </div>
       </div>
     </div>
     <div class="col">
-    <label for="intol" class="labels">Intolerances</label>
+      <label for="intol" class="labels">Intolerances</label>
 
-    <div class="row">
-    <div class="col">
-      <select class="form-control custom-select" id="intol" [(ngModel)]="intol">
-        <option value="1"></option>
-        <option value="2"></option>
-        <option value="3"></option>
-      </select>
-    </div>
-    </div>
+      <div class="row">
+        <div class="col">
+          <select
+            class="form-control custom-select"
+            id="intol"
+            [(ngModel)]="intol"
+          >
+            <option></option>
+            <option>Egg</option>
+            <option>Gluten</option>
+            <option>Dairy</option>
+            <option>Wheat</option>
+            <option>Peaanut</option>
+            <option>Sesame</option>
+            <option>Seafood</option>
+            <option>Shellfish</option>
+            <option>Soy</option>
+            <option>Sulfite</option>
+            <option>Tree nut</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <div class="col">
       <label for="exclude" class="labels">Exclude ingredients</label>
-  
+
       <div class="row">
-      <div class="col">
-        <select class="form-control custom-select" id="exclude" [(ngModel)]="exclude">
-          <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
-        </select>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            id="exclude"
+            placeholder="Excluded ingredients e,g coconut,apple"
+            [(ngModel)]="exclude"
+          />
+        </div>
       </div>
-      </div>
-      </div>
+    </div>
   </div>
 
   <button

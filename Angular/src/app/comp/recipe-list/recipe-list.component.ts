@@ -18,8 +18,8 @@ export class RecipeListComponent implements OnInit {
   ingreServ:boolean;
   recipes:any;
   number: '';
-  diet:'';
-  intol: any;
+  diet:any =  '';
+  intol:any = '';
   exclude: any;
   
 
