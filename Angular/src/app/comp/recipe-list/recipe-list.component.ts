@@ -1,26 +1,47 @@
 import { RecipeService} from '../../services/recipe-service.service'
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingAnimService } from '../../services/loading/loading-anim.service'
 import { debounceTime } from 'rxjs/operators';
 
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+
+
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  styleUrls: ['./recipe-list.component.css'],
+  animations: [
+    trigger('fade', [
+      transition('void => in', [
+        style({ opacity: 0}),
+        animate(800, style({opacity:1}))
+      ]),
+      transition('in => out', [
+        animate('1s', style({ opacity:0}))
+      ])
+    ])
+  ]
 })
 export class RecipeListComponent implements OnInit {
-  ingredients: String;
-  main:String; 
   loadingSub: Subscription;
   loading:boolean = false;
   change = false;
+  ext:boolean = false;
+  onclick: boolean = false;
   ingreServ:boolean;
+  ingredients: String;
+  main:String; 
   recipes:any;
-  number: '';
+  number: number;
   diet:any =  '';
   intol:any = '';
-  exclude: any;
+  exclude: any = '';
   
 
   
@@ -71,7 +92,10 @@ export class RecipeListComponent implements OnInit {
 
     changeSearch(){ 
      this.change = !this.change;
-     
+    }
 
+    extra(){
+      this.ext = true
+      this.onclick = !this.onclick;
     }
 }

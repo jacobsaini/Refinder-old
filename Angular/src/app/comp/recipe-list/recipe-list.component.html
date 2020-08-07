@@ -21,6 +21,7 @@
     </div>
 
     <div class="col" id="colNum">
+     
       <select class="form-control" id="num" [(ngModel)]="number">
         <option>5</option>
         <option>6</option>
@@ -41,8 +42,9 @@
       </select>
     </div>
   </div>
+  <div *ngIf="ext" id="extra" [@fade]="onclick ? 'in': 'out' ">
   <div class="row mt-4" *ngIf="!change">
-    <div class="col">
+    <div class="col" >
       <label for="diet" class="labels">Diet</label>
       <div class="row">
         <div class="col">
@@ -101,6 +103,7 @@
       </div>
     </div>
   </div>
+  </div>
 
   <button
     (click)="getByIngredients()"
@@ -134,6 +137,16 @@
   >
     Search by ingredients
   </button>
+  <button
+  (click)="extra()"
+  *ngIf="!ext"
+  type="button"
+  class="btn btn-dark btn-sm ml-3"
+  id="extraButton"
+>
+  Extra requirements
+</button>
+
 </div>
 <div class="loader" *ngIf="loading"></div>
 <hr class="my-4" />
@@ -159,3 +172,4 @@
     </div>
   </div>
 </div>
+
