@@ -15,6 +15,7 @@ module.exports = {
             "number": query.number
         }
     }),
+
     getRecipes: (query) => axios ({
         method:"GET",
         url: BASE_URL + `/recipes/search`,
@@ -31,6 +32,15 @@ module.exports = {
             "excludeIngredients": query.exclude,
             "instructionsRequired": true
 
+        }
+    }),
+    getRecipe: (query) => axios ({
+        method:"GET",
+        url: BASE_URL + `/recipes/${query.id}/information`,
+        headers: {
+            "content-type":"application/x-www-form-urlencoded",
+            "x-rapidapi-host":"spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": process.env.RAPIDAPI_KEY
         }
     })
 }

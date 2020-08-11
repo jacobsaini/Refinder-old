@@ -18,4 +18,9 @@ export class RecipeService {
     console.log(main)
     return this.http.get(`${baseUrl}search/?main=${main}&number=${number}&diet=${diet}&intol=${intol}&exclude=${exclude}`)
   }
+  
+  getRecipe(id){
+    console.log(id)
+    return this.http.get(`${baseUrl}${id}`);
+  }
 }

@@ -22,7 +22,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class RecipeListComponent implements OnInit {
   loadingSub: Subscription;
   loading: boolean = false;
-  change = false;
+  change: boolean = false;
   animationTrigger: boolean = false;
   ext: boolean = false;
   onclick: boolean = false;
@@ -57,6 +57,7 @@ export class RecipeListComponent implements OnInit {
         this.ingredients = '';
         this.loading = true;
         this.recipes = recipes;
+        console.log(recipes)
         this.ingreServ = true;
         this.animationTrigger = !this.animationTrigger;
       });

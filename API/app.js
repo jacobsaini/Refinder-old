@@ -44,13 +44,27 @@ app.get("/search", function(req,res){
         var recipes  = response['data'];
        console.log(recipes['results'])
         res.send(recipes['results'])
-        // recipes.forEach(function(recipe) {
-        //     console.log(recipe.title)
-        // });
        
     }
     asyncApiCall()
 });
+
+
+app.get("/:id", function(req,res){
+    let id = req.params.id;
+    console.log(id)
+    const query = {id:id}
+    
+    const asyncApiCall = async () => {
+        const response = await RecipeApi.getRecipe(query)
+       
+        var recipes  = response['data'];
+        console.log(recipes)
+        res.send(recipes)
+    }
+    asyncApiCall()
+});
+
 
 
 app.listen(8887, function(){

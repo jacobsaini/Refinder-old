@@ -1,1 +1,10 @@
-<p>recipe-details works!</p>
+<div class="container">
+    <div *ngFor="let recipes of recipe">
+        <div class="card">
+            <img class="card-img-top" src="{{recipes.image}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{recipes.title}}</h5>
+              <p class="card-text">{{recipes.summary}}</p>
+              </div>
+        </div>
+</div>
