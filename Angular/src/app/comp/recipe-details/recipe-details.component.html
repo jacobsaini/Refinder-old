@@ -1,10 +1,19 @@
 <div class="container">
     <div *ngFor="let recipes of recipe">
-        <div class="card">
-            <img class="card-img-top" src="{{recipes.image}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{recipes.title}}</h5>
-              <p class="card-text">{{recipes.summary}}</p>
-              </div>
+     
+            <h5 >{{recipes.title}}</h5>
+            <div class="row">
+                <div class="col">
+                    <img id="image" src="{{recipes.image}}" alt="Card image cap">             
+                </div>
+                <div class="col">
+                    <div class="Listbtn">
+                        <button class="btn btn-light" id="btnInstructions">Ingredients</button>
+                        <button class="btn btn-light" id="btnIngredients">Ingredients</button>
+                        <button class="btn btn-light" id="btnExtra">Ingredients</button>
+                    </div>
+                    <p id="text" >{{recipes.instructions}}</p>  
+            </div>
         </div>
+    </div>
 </div>

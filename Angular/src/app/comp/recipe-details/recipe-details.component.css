@@ -1,0 +1,40 @@
+
+
+
+#text {
+    border-bottom: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    padding:2rem;
+    height: 100%;
+}
+
+
+
+#btnIngredients {
+    border-radius: 0;
+    border-top: 1px solid #dee2e6;
+    transition: ease-in-out color 0.15s;
+}
+
+.Listbtn button:hover {
+   background-color: white !important; 
+}
+
+#btnInstructions {
+    border-radius: 0;
+    border-top-left-radius: .25rem;
+ 
+    border-left: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    transition: ease-in-out color 0.15s;
+}
+
+#btnExtra {
+    border-radius: 0;
+    border-top-right-radius: .25rem;
+ 
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    transition: ease-in-out color 0.15s;
+}

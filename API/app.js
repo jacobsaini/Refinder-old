@@ -1,24 +1,26 @@
+//Variables
 const express = require("express"),
-      bodyParser = require('body-parser'),
       cors = require("cors"),
       app = express()
     
-
+//Cors setup
 const corsOptions = {
     origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(bodyParser.json())
+
+//Api var
 const RecipeApi = require('./recipeapi')
 
-
+//Search by ingredients
 app.get("/", function(req,res){
+    //Ingredients and number of recipes to be displayed from angular service
     var ingredient = req.query.ingredients;
     var number  = req.query.number;
     console.log(number,ingredient)
     const query = {ingredients: ingredient, number: number}
+
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipesByIngre(query)
         var recipes  = response['data'];
@@ -29,6 +31,7 @@ app.get("/", function(req,res){
     }
     asyncApiCall()
 });
+//Search by name of a recipe
 app.get("/search", function(req,res){
     let main = req.query.main,
         number = req.query.number;
@@ -49,7 +52,7 @@ app.get("/search", function(req,res){
     asyncApiCall()
 });
 
-
+//Get instructions of recipe by id
 app.get("/:id", function(req,res){
     let id = req.params.id;
     console.log(id)
@@ -66,7 +69,7 @@ app.get("/:id", function(req,res){
 });
 
 
-
+//Server port
 app.listen(8887, function(){
     console.log('Server has started on port 8887')
 })
