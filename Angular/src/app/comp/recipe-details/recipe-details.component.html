@@ -5,16 +5,16 @@
      
             <h5 >{{recipes.title}}</h5>
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 " id="mobileImg">
                     <img id="image" src="{{recipes.image}}" alt="Card image cap">             
                 </div>
-                <div class="col-6">
+                <div class="col-6" id="mobileText">
                     <div class="row">
                         <div class="col">
                             <div class="Listbtn">
                                 <button class="btn btn-light" [disabled]=" instructionsChange" id="btnInstructions" (click)="changeToInstruction()">Instructions</button>
                                 <button class="btn btn-light" [disabled]=" ingredientsChange" id="btnIngredients" (click)="changeToIngredients()">Ingredients</button>
-                                <button class="btn btn-light" [disabled]=" extrasChange" id="btnExtra" (click)="changeToExtra()">Ingredients</button>
+                                <button class="btn btn-light" [disabled]=" extrasChange" id="btnExtra" (click)="changeToExtra()">Summary</button>
                             </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <div *ngFor="let number of numbers">
                             <p id="text" style="white-space: pre-line;" *ngIf="instructionsChange">{{recipes.instructions}}</p>
                             <p id="text" style="white-space: pre-line;" *ngIf="ingredientsChange" ><span *ngFor="let ingredient of recipes.extendedIngredients">{{ingredient.originalString}} <br/></span></p>
-                            <!-- <p id="text" style="white-space: pre-line;" >{{recipes.instructions}}</p> -->
+                            <p id="text" style="white-space: pre-line;" *ngIf="extrasChange" ><span innerHTML="{{recipes.summary}}"></span></p>
                          </div>
                         
                     </ngx-simplebar>
