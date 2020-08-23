@@ -75,27 +75,63 @@ ngx-simplebar {
   
  }
  @media screen and (max-width: 2650px) {
-    .site-header {
-      font-size:2em;
-    }
+  #text {
+    font-size:2.5em;
+  }
+  #title {
+    font-size:3.5em;
+  }
+  .container {
+    max-width:2560px;
+  }
+  ngx-simplebar {
+    
+    height: 98%;
+    width:100%;
+    max-height:800px !important;
+    max-width:1280px;
+  }
+  .Listbtn button {
+    width:33.3%;
+    font-size:2.5em;
+}
   }
   
-  @media screen and (max-width: 2000px) {
-    .site-header {
-      background-attachment: scroll;
-      font-size:1em;
+  @media screen and (max-width: 1440px) {
+    #text {
+      font-size:1.5em;
+    }
+    .Listbtn button{
+      font-size:1.3em;
+    }
+    #title{
+      font-size:2em;
     }
   }
   @media screen and (max-width: 1024px) {
   .Listbtn button{
       width:33.3%;
+     
+  }
+  #title{
+    font-size:1.5em;
+  }
+  #text {
+    font-size: 1.3em;
   }
 
 }
   @media screen and (max-width: 768px) {
     .Listbtn button {
         width:33.3%;
+        font-size:1em;
     }
+    #text {
+    font-size: medium;
+  }
+  #title{
+    font-size:1.2em;
+  }
   }
   
   @media screen and (max-width: 480px) {
