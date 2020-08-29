@@ -30,10 +30,11 @@ export class RecipeListComponent implements OnInit {
   ingredients: String;
   main: String;
   recipes: any;
-  number: number;
+  number: number = 20;
   diet: any = '';
   intol: any = '';
   exclude: any = '';
+  error: any;
 
   constructor(
     private recipeService: RecipeService,
@@ -60,10 +61,11 @@ export class RecipeListComponent implements OnInit {
         console.log(recipes)
         this.ingreServ = true;
         this.animationTrigger = !this.animationTrigger;
-      });
-    (error) => {
-      console.log(error);
-    };
+      }, (error) => {
+      this.error = error.error
+      console.log(error.error)
+    }
+    );
   }
 
   getBySearch() {
@@ -76,22 +78,26 @@ export class RecipeListComponent implements OnInit {
         this.loading = true;
         this.recipes = recipes;
         this.animationTrigger = !this.animationTrigger;
-      });
+      },
     (error) => {
-      console.log(error);
-    };
-  }
-
+      this.error = error.error
+      console.log(error.error)
+    }
+      );
+    }
+  
   ngOnDestroy() {
     this.loadingSub.unsubscribe();
   }
 
   changeSearch() {
     this.change = !this.change;
+    this.error = null
   }
 
   extra() {
     this.ext = true;
     this.onclick = !this.onclick;
+    
   }
 }

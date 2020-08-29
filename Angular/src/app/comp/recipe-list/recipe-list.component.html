@@ -1,4 +1,8 @@
+<div class="container">
 <div class="jumbotron input">
+  <div *ngIf="error">
+    <div class="alert alert-danger" id='error' role="alert" >{{error.msg}}</div>
+  </div>
   <div class="row">
     <div class="col">
       <input
@@ -109,6 +113,7 @@
     *ngIf="change"
     type="button"
     class="btn btn-success"
+    [disabled]=" !ingredients"
   >
     Submit
   </button>
@@ -117,6 +122,7 @@
     *ngIf="!change"
     type="button"
     class="btn btn-success"
+    [disabled]="!main"
   >
     Submit
   </button>
@@ -152,23 +158,24 @@
   <div class="row">
     <div class="col" *ngFor="let recipe of recipes">
       <div class="card">
-        <img class="card-img-top" *ngIf="ingreServ" src="{{ recipe.image }}" />
+        <img class="card-img-top recipeImg" *ngIf="ingreServ" src="{{ recipe.image }}" />
         <img
           class="card-img-top recipeImg"
           *ngIf="!ingreServ"
           src="https://spoonacular.com/recipeImages/{{ recipe.image }}"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ recipe.title | slice: 0:26 }}</h5>
+          <h5 class="card-title">{{ recipe.title | slice: 0:24 }}</h5>
           <p class="card-text">
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a routerLink="/recipe/{{ recipe.id }}" class="btn btn-primary"
+          <a id="card-button" routerLink="/recipe/{{ recipe.id }}" class="btn btn-primary"
             >Go somewhere</a
           >
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
