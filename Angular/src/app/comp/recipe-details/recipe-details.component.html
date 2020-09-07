@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     
-                    <ngx-simplebar [options]="options">
+                    <ngx-simplebar id="text-bg" [options]="options">
                         <div *ngFor="let number of numbers">
                             <p id="text" style="white-space: pre-line;" *ngIf="instructionsChange">{{recipes.instructions}}</p>
                             <p id="text" style="white-space: pre-line;" *ngIf="ingredientsChange" ><span *ngFor="let ingredient of recipes.extendedIngredients">{{ingredient.originalString}} <br/></span></p>

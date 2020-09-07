@@ -51,19 +51,19 @@ app.get("/", function (req, res) {
 app.get("/search", function (req, res) {
     let main = req.query.main,
         number = req.query.number;
-        diet = req.query.diet
-        intol = req.query.intol,
+    diet = req.query.diet
+    intol = req.query.intol,
         exclude = req.query.exclude;
 
     const query = { number: number, main: main, diet: diet, intol: intol, exclude: exclude }
     console.log(query)
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)
-
         var recipes = response['data'];
         console.log(recipes['results'])
-        if (Array.isArray(recipes) && recipes.length) {
-            res.send(recipes)
+        var test = recipes['results']
+        if (Array.isArray(test) && test.length) {
+            res.send(recipes['results'])
         }
         else {
             res.status(404).json({ msg: "We couldn't find any recipes with those parameters" });

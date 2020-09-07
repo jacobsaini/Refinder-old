@@ -14,9 +14,16 @@ ngx-simplebar {
     border-bottom: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
     border-left: 1px solid #dee2e6;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
   }
   
-
+#text-bg{
+  background-color:white;
+}
+#title {
+  margin-bottom:1em;
+}
 
 #text {
     
@@ -26,6 +33,7 @@ ngx-simplebar {
 
 #image {
     width:100%;
+    border-radius: .25rem;
 }
 
 #btnIngredients {
@@ -101,6 +109,9 @@ ngx-simplebar {
     #text {
       font-size:1.5em;
     }
+    ngx-simplebar {
+      height:29em;
+    }
     .Listbtn button{
       font-size:1.3em;
     }
@@ -113,6 +124,7 @@ ngx-simplebar {
       width:33.3%;
      
   }
+ 
   #title{
     font-size:1.5em;
   }

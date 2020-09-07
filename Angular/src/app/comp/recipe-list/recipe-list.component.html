@@ -1,4 +1,5 @@
-<div class="container">
+
+
 <div class="jumbotron input">
   <div *ngIf="error">
     <div class="alert alert-danger" id='error' role="alert" >{{error.msg}}</div>
@@ -78,7 +79,7 @@
               <option>Gluten</option>
               <option>Dairy</option>
               <option>Wheat</option>
-              <option>Peaanut</option>
+              <option>Peanut</option>
               <option>Sesame</option>
               <option>Seafood</option>
               <option>Shellfish</option>
@@ -156,7 +157,7 @@
 <hr class="my-4" />
 <div class="container" [@fade]="animationTrigger ? 'out' : 'in'">
   <div class="row">
-    <div class="col" *ngFor="let recipe of recipes">
+    <div class="col" id="col-mobile" *ngFor="let recipe of recipes">
       <div class="card">
         <img class="card-img-top recipeImg" *ngIf="ingreServ" src="{{ recipe.image }}" />
         <img
@@ -178,4 +179,4 @@
     </div>
   </div>
 </div>
-</div>
+
