@@ -44,7 +44,7 @@ button {
 .loader {
     width: 60px;
     height: 60px;
-    background: transparent;
+    background: rgb(250, 245, 245, 0.3);
     border: 10px solid transparent;
     border-top-color: #f56;
     border-left-color: #f56;
@@ -52,6 +52,8 @@ button {
     animation: loader .75s 10 ease forwards;
     margin-left:45%;
     margin-bottom: 10%;
+    margin-top: 5em;
+   
   }
   
   @keyframes loader {
@@ -59,6 +61,7 @@ button {
       transform: rotate(360deg);
     }
   }
+  
 
   @media screen and (max-width: 2650px) {
     .container {
