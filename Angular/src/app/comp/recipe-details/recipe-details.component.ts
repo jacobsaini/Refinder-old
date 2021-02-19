@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { debounceTime } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { RecipeService } from '../../services/recipe-service.service'
 import { LoadingAnimService } from '../../services/loading/loading-anim.service';
@@ -12,20 +15,21 @@ import { LoadingAnimService } from '../../services/loading/loading-anim.service'
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
-export class RecipeDetailsComponent implements OnInit {
+export class RecipeDetailsComponent implements OnInit,OnDestroy {
+  private unsub: Subject<any> = new Subject();
+
   recipe:any = [{}];
 
-
-
-
-
   options = { autoHide: false, scrollbarMinSize: 40, scrollbarMaxSize: 60 };
+ 
   numbers = Array(1).fill(0);
+ 
   instructionsChange: boolean = true;
   ingredientsChange: boolean = false;
   extrasChange: boolean = false;
-  loadingSub: Subscription;
   loading: boolean = false;
+
+  loadingSub: Subscription;
 
 
   constructor(  
@@ -37,7 +41,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit(){
     this.loadingSub = this.loadingScreenServ.loadingStatus
-    .pipe(debounceTime(200))
+    .pipe(debounceTime(200),takeUntil(this.unsub))
     .subscribe((value) => {
       this.loading = value;
     });
@@ -46,13 +50,14 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   getRecipe(id){
-    this.recipeService.getRecipe(id).subscribe(
+    this.recipeService.getRecipe(id)
+    .pipe(takeUntil(this.unsub))
+    .subscribe(
       (recipe) => {
         this.loading = true;
         this.recipe = [recipe];
         console.log(recipe)
-      }
-    )
+      })
   }
 
   changeToIngredients(){
@@ -69,6 +74,11 @@ export class RecipeDetailsComponent implements OnInit {
     this.extrasChange = false;
     this.ingredientsChange = false;
     this.instructionsChange = !this.instructionsChange;
+  }
+
+  ngOnDestroy(){
+    this.unsub.next();
+    this.unsub.complete();
   }
 
 }

@@ -1,7 +1,11 @@
 import { RecipeService } from '../../services/recipe-service.service';
-import { Component, OnInit } from '@angular/core';
+
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingAnimService } from '../../services/loading/loading-anim.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { debounceTime } from 'rxjs/operators';
 
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -19,7 +23,9 @@ import { trigger, style, animate, transition } from '@angular/animations';
     ]),
   ],
 })
-export class RecipeListComponent implements OnInit {
+export class RecipeListComponent implements OnInit, OnDestroy {
+  private unsub: Subject<any> = new Subject();
+  
   loadingSub: Subscription;
   loading: boolean = false;
   change: boolean = false;
@@ -27,10 +33,13 @@ export class RecipeListComponent implements OnInit {
   ext: boolean = false;
   onclick: boolean = false;
   ingreServ: boolean;
+
   ingredients: String;
   main: String;
-  recipes: any;
+
   number: number = 20;
+  
+  recipes: any;
   diet: any = '';
   intol: any = '';
   exclude: any = '';
@@ -43,22 +52,22 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
     this.loadingSub = this.loadingScreenServ.loadingStatus
-      .pipe(debounceTime(200))
+      .pipe(debounceTime(200),takeUntil(this.unsub))
       .subscribe((value) => {
         this.loading = value;
       });
   }
 
   getByIngredients() {
-    // this.ingredients = this.ingredients.replace(/\s/g, '');
-    console.log(this.ingredients, this.number);
+    
     this.recipeService
       .getByIngredient(this.ingredients, this.number)
+      .pipe(takeUntil(this.unsub))
       .subscribe((recipes) => {
         this.ingredients = '';
         this.loading = true;
         this.recipes = recipes;
-        console.log(recipes)
+      
         this.ingreServ = true;
         this.animationTrigger = !this.animationTrigger;
       }, (error) => {
@@ -72,6 +81,7 @@ export class RecipeListComponent implements OnInit {
     console.log(this.main);
     this.recipeService
       .getBySearch(this.main, this.number, this.diet, this.intol, this.exclude)
+      .pipe(takeUntil(this.unsub))
       .subscribe((recipes) => {
         this.ingreServ = false;
         this.main = '';
@@ -88,6 +98,8 @@ export class RecipeListComponent implements OnInit {
   
   ngOnDestroy() {
     this.loadingSub.unsubscribe();
+    this.unsub.next();
+    this.unsub.complete();
   }
 
   changeSearch() {
@@ -100,4 +112,7 @@ export class RecipeListComponent implements OnInit {
     this.onclick = !this.onclick;
     
   }
+
+
+ 
 }
