@@ -64,389 +64,152 @@ button {
       transform: rotate(360deg);
     }
   }
-  
-
-  @media screen and (max-width: 2650px) {
-    .container {
-        max-width:2560px;
-    }
-
-    .labels {
-        margin-bottom:0;
-        font-size:2em;
-    }
-    
-    #num {
-        width:3.7em;
-        height: 2.9em;
-        font-size:2em;
-    }
-    
-    #diet {
-       
-        width:10.5em;
-    }
-    
-    input[type=text], select {
-        width:100%;
-        height:2.5em;
-        font-size:2em;
-    }
-    
-  
-    button {
-        font-size:1.8em;
-        margin-top:2em
-    }
-    .card {
-        height:45m;
-        margin-bottom: 4em;
-        width:50em;
-        
-    }
-    .card-title {
-        font-size:3em;
-    }
-    .card-text{
-        font-size:2.5em;
-    }
-    .recipeImg {
-        height:20em;
-    }
-    #card-button {
-        font-size: 2.5em;
-    }
-  } 
 
 
-  @media screen and (max-width: 1440px) {
-    .labels {
-        margin-bottom:0;
-        font-size:1.6em;
-    }
-    
-    #num {
-        width:3.7em;
-        height: 2.3em;
-        font-size:1.5em;
-    }
-    
-    #diet {
-       
-        width:10.5em;
-    }
-    
-    input[type=text], select {
-        width:100%;
-        height:2.5em;
-        font-size:1.8em;
-    }
-    
-  
-    button {
-        font-size:1.4em;
-        margin-top:2em
-    }
-    .card {
-        height:39em;
-        margin-bottom: 2em;
-        width:27em;
-        
-    }
-    .card-title {
-        font-size:2em;
-    }
-    .card-text{
-        font-size:1.6em;
-    }
-    .recipeImg {
-        height:20em;
-    }
-    #card-button {
-        font-size: 2em;
-    }
-  } 
 
-
-  @media screen and (max-width: 1400px) {
-    .labels {
-        margin-bottom:0;
-        font-size:1.2em;
+  @media screen and (min-width: 1900px) {
+    button{
+        font-size:1.3em !important;
     }
-    
-    #num {
-     
-        height: 1.9em;
-        font-size:1.3em;
+    .form-control{
+        font-size:1.4em !important;
     }
-    
-    #diet {
-       
-        width:10.5em;
-    }
-    
-    input[type=text], select {
-        width:100%;
-        height:2.5em;
-        font-size:1em;
-    }
-    
-  
-    button {
-        font-size:1em;
-        margin-top:2em
-    }
-    .card {
-        height:33em;
-        margin-bottom: 2em;
-        width:23em;
-        
-    }
-    .card-title {
-        font-size:1.8em;
-    }
-    .card-text{
-        font-size:1.3em;
-    }
-    .recipeImg {
-        height:15em;
-    }
-    #card-button {
-        font-size: 1.4em;
-    }
-  } 
-
-
-@media screen and (max-width: 768px) {
     #main {
-        width:28em;
+        width:80vw;
+        margin-bottom:1em;
     }
     #exclude {
-        width:28em;
+        width:80vw;
+    }
+    #ingredients {
+        width:80vw;
+        margin-bottom: 1em;
+    }
+   #col-mobile{
+       width:50vw !important;
+       height:auto;
+   }
+   .card {
+       width:33vw !important;
+   }
+  
+  
+  }
+
+  @media screen and (min-width: 1400px) {
+    #main {
+        width:80vw;
+        margin-bottom:1em;
+    }
+    #exclude {
+        width:80vw;
+    }
+    #ingredients {
+        width:80vw;
+        margin-bottom: 1em;
+    }
+   #col-mobile{
+       width:50vw !important;
+       height:auto;
+   }
+   .card {
+       width:33vw !important;
+   }
+   #card-button {
+        font-size: 1.2em;
+    }
+
+    .card-title {
+        font-size:1.4em;
+    }
+    .card-text{
+        font-size:1em;
     }
     
   
+  
+  }
+
+
+@media screen and (min-width: 999px) {
+    #main {
+        width:80vw;
+        margin-bottom:1em;
+    }
+    #exclude {
+        width:80vw;
+    }
+    #ingredients {
+        width:80vw;
+        margin-bottom: 1em;
+    }
+   #col-mobile{
+       width:50vw !important;
+       height:auto;
+   }
    .card {
-       width:20em;
-       height:34em;
+       width:33vw;
+   }
+   #card-button {
+        font-size: 1.2em;
+    }
+
+    .card-title {
+        font-size:1.4em;
+    }
+    .card-text{
+        font-size:1em;
+    }
+    
+  
+  
+  }
+  @media screen and (max-width: 768px) {
+    #main {
+        width:90vw;
+        margin-bottom:1em;
+    }
+    #exclude {
+        width:90vw;
+    }
+    #ingredients {
+        width:90vw;
+        margin-bottom: 1em;
+    }
+   #col-mobile {
+       width:50vw;
+       height:auto;
    } 
    #card-button {
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     .card-title {
         font-size:1.6em;
     }
     .card-text{
-        font-size:1.2em;
+        font-size:1.4em;
     }
-}
-
-@media screen and (max-width: 648px) {
-    #main {
-        margin-bottom: 2em;
-    }
-    
-}
-
-@media screen and (max-width: 550px) {
-    #ingredients {
-        width:25em;
-        margin-bottom:2em;
-    }
-    
-}
-
-@media screen and (max-width: 479px) {
-    #main {
-        width:24em;
-    }
-    #exclude {
-        width:24em;
-    }
-}
-@media screen and (max-width: 440px) {
-    #ingredients {
-        width:24em;
-    }
-}
-@media screen and (max-width: 430px) {
-    #ingredients {
-        width:22em;
-    }
-    #main {
-        width:22em;
-    }
-    #exclude {
-        width:22em;
-    }
-    
-}
-
-
-@media screen and (max-width: 410px) {
-    #main {
-        width:20em;
-    }
-    #exclude {
-        width:20em;
-    }
-}
-@media screen and (max-width: 397px){
-    #ingredients{
-    width:20em;
-    }
-}
-
-@media screen and (max-width: 360px){
-    #main {
-        width:18em;
-    }
-    #exclude {
-        width:18em;
-    }
-}
-
-@media screen and (max-width: 330px){
-    #main {
-        width:16em;
-    }
-    #exclude {
-        width:16em;
-    }
-    #ingredients {
-        width:16em;
-    }
-}
-@media screen and (max-width:326px) {
+  }
+  
+  @media screen and (max-width: 450px) {
     
     #col-mobile{
-        padding-left:0px;
+        width:100%;
     }
-}
-
-@media screen and (max-width:324px) {
-    
     button {
         font-size:1em;
         margin-top:1.7em; 
         margin-left:.5em !important;
     }
-}
-
-@media screen and (max-width: 280px){
     #main {
-        width:13em;
+        width:80vw;
+        
     }
     #exclude {
-        width:13em;
-    }
-   
-}
-
-
-@media screen and (max-width: 265px){
-    #main {
-        width:14em;
-        font-size:0.8em;
-    }
-    #exclude {
-        width:14em;
-        font-size:0.8em;
-    }
-}
-@media screen  and (min-height:812px) {
-    
-    .labels {
-        font-size:1.6em;
-    }
-    button {
-        font-size:1.4em;
-        margin-top:2em
-    }
-}
-
-
-@media screen  and (min-height:1024px) {
-    input[type=text], select {
-        font-size:1.5em;
-    }
-    #main {
-        width:28em;
-        margin-bottom:1em;
+        width:80vw;
     }
     #ingredients {
-        width:28em;
-        margin-bottom:1em;
+        width:80vw;
     }
-    .labels {
-        font-size:1.7em;
-    }
-    button {
-        font-size:1.5em;
-        margin-top:2em
-    }
-   .card {
-       width:20em;
-       height:34em;
-   } 
-   #card-button {
-        font-size: 1.3em;
-    }
-
-    .card-title {
-        font-size:1.6em;
-    }
-    .card-text{
-        font-size:1.2em;
-    }
-}
-@media screen and (min-height:1200px){
-    input[type=text], select {
-        font-size:2em;
-    }
-    #main {
-        width:28em;
-        margin-bottom:1em;
-    }
-    #number {
-        width:5em;
-    }
-    #ingredients {
-        width:28em;
-        margin-bottom:1em;
-    }
-    .labels {
-        font-size:2em;
-    }
-    button {
-        font-size:2.6em;
-        margin-top:2em
-    }
-   .card {
-       width:50em;
-       height:50em;
-   } 
-   #card-button {
-        font-size: 2.7em;
-    }
-    .recipeImg {
-        height: 29em;
-    }
-
-    .card-title {
-        font-size:3.5em;
-    }
-    .card-text{
-        font-size:2.2em;
-    }
-}
-@media screen  and (min-height:1366px){
-    #exclude {
-        width:40em;
-    }
-    #num {
-        font-size:2.3em;
-        height:2em;
-    }
-}
+  }

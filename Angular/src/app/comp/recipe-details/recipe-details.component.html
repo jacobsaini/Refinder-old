@@ -1,7 +1,7 @@
 <div class="container mt-3">
     <div class="loader" *ngIf="loading"></div>
     <div *ngIf="!loading">
-    <div *ngFor="let recipes of recipe">
+    <div id="cont" *ngFor="let recipes of recipe">
      
             <h5 id="title" >{{recipes.title}}</h5>
             <div class="row">

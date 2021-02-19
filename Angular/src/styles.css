@@ -1,12 +1,36 @@
-body{
-    height: 100%;
-    background-size:cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    width:auto;
-    font-family: "Helvetica", "Arial", sans-serif;
-    min-height: 100%;
+body, html{
+    height: 100vh;
     
-    /* background-image:url("./assets/background.jpg"); */
+    width:100vw;
+    font-family: "Helvetica", "Arial", sans-serif;
+    
+    
+
+}
+@media screen and (min-width: 1900px) {
+    html,body{
+        font-size:1.4em !important;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    html,body{
+        font-size:1.2em !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html,body{
+    font-size:1em;
+    }
+}
+@media screen and (max-width: 768px) {
+    html,body{
+        font-size:0.8em !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    html,body {
+        font-size:1em !important;
+    }
 }
