@@ -1,10 +1,10 @@
 const axios = require("axios");
 require('dotenv').config();
-const BASE_URL = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com`
+
 module.exports = {
     getRecipesByIngre: (query) => axios({
         method:"GET",
-        url : BASE_URL + `/recipes/findByIngredients`,
+        url : process.env.BASE_URL + `/recipes/findByIngredients`,
         headers: {
             "content-type":"application/x-www-form-urlencoded",
             "x-rapidapi-host":"spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",

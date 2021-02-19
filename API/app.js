@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
     //Ingredients and number of recipes to be displayed from angular service
     var ingredient = req.query.ingredients;
     var number = req.query.number;
-    console.log(number, ingredient)
+   
     const query = { ingredients: ingredient, number: number }
 
     const asyncApiCall = async () => {
@@ -51,8 +51,8 @@ app.get("/", function (req, res) {
 app.get("/search", function (req, res) {
     let main = req.query.main,
         number = req.query.number;
-    diet = req.query.diet
-    intol = req.query.intol,
+        diet = req.query.diet
+        intol = req.query.intol,
         exclude = req.query.exclude;
 
     const query = { number: number, main: main, diet: diet, intol: intol, exclude: exclude }
@@ -60,7 +60,7 @@ app.get("/search", function (req, res) {
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipes(query)
         var recipes = response['data'];
-        console.log(recipes['results'])
+
         var test = recipes['results']
         if (Array.isArray(test) && test.length) {
             res.send(recipes['results'])
@@ -75,13 +75,12 @@ app.get("/search", function (req, res) {
 //Get instructions of recipe by id
 app.get("/:id", function (req, res) {
     let id = req.params.id;
-    console.log(id)
+
     const query = { id: id }
 
     const asyncApiCall = async () => {
         const response = await RecipeApi.getRecipe(query)
         var recipes = response['data'];
-        console.log(recipes)
         res.send(recipes)
     }
     asyncApiCall()

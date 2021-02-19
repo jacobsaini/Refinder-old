@@ -155,8 +155,8 @@
 </div>
 <div class="loader" *ngIf="loading"></div>
 <hr class="my-4" />
-<div class="container" [@fade]="animationTrigger ? 'out' : 'in'">
-  <div class="row">
+<div class="container"  [@fade]="animationTrigger ? 'out' : 'in'">
+  <div class="row" id="card-bg">
     <div class="col" id="col-mobile" *ngFor="let recipe of recipes">
       <div class="card">
         <img class="card-img-top recipeImg" *ngIf="ingreServ" src="{{ recipe.image }}" />
