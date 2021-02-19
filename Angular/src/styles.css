@@ -9,7 +9,7 @@ body, html{
 }
 @media screen and (min-width: 1900px) {
     html,body{
-        font-size:1.4em !important;
+        font-size:0.8em !important;
     }
 }
 
