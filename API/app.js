@@ -2,14 +2,6 @@
 const express = require("express"),
     cors = require("cors"),
     app = express()
-
-//Cors setup
-const corsOptions = {
-    origin: 'http://localhost:4200',
-    optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions))
-
 //Api var
 const RecipeApi = require('./recipeapi')
 
