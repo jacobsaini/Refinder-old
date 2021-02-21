@@ -2,8 +2,8 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'development',
-  entry: 'Angular\src\app\services\recipe-service.service.ts',
+  mode: 'production',
+  entry: './src/app/services/recipe-service.service.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
