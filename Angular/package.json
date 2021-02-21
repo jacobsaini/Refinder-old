@@ -4,12 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "node app.js",
-    "config": "ts-node ./src/assets/setEnv.ts",
-    "build": "npm run config -- --environment=prod && ng build --prod",
+    "build": "ng build --prod && npm start",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "npm run config -- --environment=prod && ng build --prod"
+    "heroku-postbuild": "ng build --prod && npm start"
   },
   "engines": {
     "node": "12.13.1",
