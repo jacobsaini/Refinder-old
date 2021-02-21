@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import * as env from "../../../conf.js";
 
 const baseUrl = process.env.API_URL;
 
