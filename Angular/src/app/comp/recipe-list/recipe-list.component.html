@@ -2,9 +2,6 @@
   <div class="input">
     <div id="home-inputs">
       <h2 id="header">Find Great Recipes</h2>
-      <div *ngIf="error">
-        <div class="alert alert-danger" id='error' role="alert">{{error.msg}}</div>
-      </div>
       <div class="row">
         <div class="col">
           <input type="text" *ngIf="change" class="form-control" id="ingredients" placeholder="Enter some ingredients"
