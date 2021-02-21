@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-require('dotenv').config();
+
 
 const baseUrl = process.env.API_URL;
 
