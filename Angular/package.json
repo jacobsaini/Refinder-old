@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run config -- --environment=prod && node app.js",
+    "start": "node app.js",
     "config": "ts-node ./src/assets/setEnv.ts",
     "build": "npm run config -- --environment=prod && ng build --prod",
     "test": "ng test",
