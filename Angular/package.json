@@ -30,7 +30,7 @@
     "simplebar-angular": "^2.3.0",
     "tslib": "^1.14.1",
     "zone.js": "~0.10.2",
-    "typescript": "~2.3.3"
+    "typescript": "~4.1.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1102.1",
