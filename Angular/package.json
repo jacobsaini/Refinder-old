@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run config -- --environment=prod && node app.js",
-    "config": "ts-node ./sec/assets/setEnv.ts",
+    "config": "ts-node ./src/assets/setEnv.ts",
     "build": "npm run config -- --environment=prod && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
