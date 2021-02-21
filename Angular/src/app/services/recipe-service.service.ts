@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import * as env from "../../../conf.js";
+import { environment } from '../../environments/environment.prod'
 
-const baseUrl = process.env.API_URL;
+const baseUrl = environment.API_URL;
 
 @Injectable({
   providedIn: 'root'
