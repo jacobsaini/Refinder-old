@@ -15,22 +15,22 @@ body, html{
 
 @media screen and (min-width: 1400px) {
     html,body{
-        font-size:1.2em !important;
+        font-size:20px !important;
     }
 }
 
 @media screen and (min-width: 1000px) {
     html,body{
-    font-size:1em;
+    font-size: 20px;
     }
 }
 @media screen and (max-width: 768px) {
     html,body{
-        font-size:0.8em !important;
+        font-size: 18px !important;
     }
 }
 @media screen and (max-width: 450px) {
     html,body {
-        font-size:1em !important;
+        font-size: 16px !important;
     }
 }
