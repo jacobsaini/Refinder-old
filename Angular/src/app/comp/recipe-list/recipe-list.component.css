@@ -126,8 +126,17 @@ button {
        width:50vw !important;
        height:auto;
    }
+   .recipeImg{
+    width:100%;
+    }
+    .card-body{
+        width:100%;
+    }
    .card {
        width:33vw !important;
+   }
+   .container{
+       max-width:80vw;
    }
   
   
@@ -146,9 +155,16 @@ button {
         margin-bottom: 1em;
     }
    #col-mobile{
-       width:50vw !important;
+       width:40vw !important;
        height:auto;
    }
+   .recipeImg{
+    width:100%;
+    }
+    .card-body{
+        width:100%;
+    }
+   .c
    .card {
        width:20vw !important;
    }
@@ -181,14 +197,14 @@ button {
         margin-bottom: 1em;
     }
    #col-mobile{
-       width:50vw !important;
+       width:45vw !important;
        height:auto;
    }
     .recipeImg{
-    width:45vw;
+    width:100%;
     }
     .card-body{
-        width:45vw;
+        width:100%;
     }
    .card {
        width:30vw;
@@ -202,13 +218,16 @@ button {
     #main {
         width:80vw;
         margin-bottom:1em;
+        font-size:1.2em !important;
     }
     #exclude {
         width:80vw;
+        font-size:1.2em !important;
     }
     #ingredients {
         width:80vw;
         margin-bottom: 1em;
+        font-size:1.2em !important;
     }
    #col-mobile {
        width:45vw;
@@ -232,6 +251,36 @@ button {
         font-size:1.4em;
     }
   }
+
+
+  @media screen and (min-width: 450px) and (orientation : landscape) {
+   
+
+    #col-mobile{
+        width:100%;
+    }
+    button {
+        font-size:1rem;
+        margin-top:1.7rem; 
+        margin-left:.5rem !important;
+    }
+    #main {
+       
+        font-size:inherit;
+        
+    }
+    #exclude {
+        
+        font-size:inherit;
+    }
+    #ingredients {
+        
+        font-size:inherit;
+    }
+    label {
+        font-size:inherit;
+    }
+}
   
   @media screen and (max-width: 450px) {
     .jumbotron{
