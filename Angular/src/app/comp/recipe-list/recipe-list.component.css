@@ -3,7 +3,7 @@
     background: url(../../../assets/images/background.jpg);
     position: relative;
     background-size: cover;
-    margin: 0em 0em 0 0em;
+    margin: 0em 0em 10vh 0em;
     height: auto;
     max-height:100vh;
     max-width:100%;
@@ -184,8 +184,14 @@ button {
        width:50vw !important;
        height:auto;
    }
+    .recipeImg{
+    width:45vw;
+    }
+    .card-body{
+        width:45vw;
+    }
    .card {
-       width:20vw;
+       width:30vw;
    }
    
     
@@ -205,9 +211,16 @@ button {
         margin-bottom: 1em;
     }
    #col-mobile {
-       width:50vw;
+       width:45vw;
        height:auto;
-   } 
+   }
+   .recipeImg{
+    width:45vw;
+    }
+    .card-body{
+        width:45vw;
+    }
+
    #card-button {
         font-size: 1.4em;
     }
@@ -224,6 +237,13 @@ button {
     .jumbotron{
         height:auto;
     }
+    .recipeImg{
+        width:90vw;
+    }
+    .card-body{
+        width:90vw;
+    }
+
     #col-mobile{
         width:100%;
     }
