@@ -77,14 +77,14 @@ ngx-simplebar {
 @media screen and (min-width: 999px) {
 
   #mobileText {
-    max-width: 50%;
+    max-width: 90%;
     width: 50%;
     
     flex: 0 0 100%;
     
   }
   #mobileImg {
-    max-width: 50%;
+    max-width: 90%;
     
     width:50%;
     height: auto !important;
